@@ -107,8 +107,8 @@ echo ************************************ &
 :: cscript //nologo %SystemRoot%\system32\slmgr.vbs /ipk (install product key)
 :: cscript //nologo %SystemRoot%\system32\slmgr.vbs /upk (uninstall product key)
 :: cscript //nologo %SystemRoot%\system32\slmgr.vbs /cpky (uninstall product key from Registry)
-:: cscript //nologo %SystemRoot%\system32\slmgr.vbs  /ckms
-:: cscript //nologo %SystemRoot%\system32\slmgr.vbs  /skhc
+:: cscript //nologo %SystemRoot%\system32\slmgr.vbs /ckms
+:: cscript //nologo %SystemRoot%\system32\slmgr.vbs /skhc
 :: slmgr /ckms
 
 
@@ -134,6 +134,10 @@ echo ===========================================================================
 ::Varolan etkinleütirme anahtarçnç sil
 echo YÅklenmiü Lisans Anahtarç Siliniyor...&
 cscript //nologo %SystemRoot%\system32\slmgr.vbs -upk
+echo Kayçt defteri kalçntçlarç siliniyor...&
+cscript //nologo %SystemRoot%\system32\slmgr.vbs /cpky
+echo KMS Aktivasyonu Siliniyor...&
+cscript //nologo %SystemRoot%\system32\slmgr.vbs /ckms
 :: cscript //nologo %SystemRoot%\system32\slmgr.vbs /cpky
 echo ============================================================================&
 
