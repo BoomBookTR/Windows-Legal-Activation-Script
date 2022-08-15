@@ -12,6 +12,8 @@ Windows 7, 8, 8.1, 10, 11 tüm sürümlerini (Home, Pro vb. farketmeksizin) dest
 
 *Mevcut lisans anahtarını silme
 
+*KMS Lisans Anahtarı ve Sunucusu Silme
+
 *Lisans anahtarı ekleme
 
 *Çevrimiçi aktivasyon
@@ -21,6 +23,7 @@ Windows 7, 8, 8.1, 10, 11 tüm sürümlerini (Home, Pro vb. farketmeksizin) dest
 *Installation ID (IID) - Yükleme Kimliği alır.
 
 *Confirmation ID (CID) - Onay Kimliği alır.
+
 
 # Detaylar
 Bizim burada kullanacağımız etkinleştirme yöntemi çevrimiçi ve çevrimdışı aktivasyon yönteminin ikisinin de kod ile yapılabilmesi üzerine olacaktır.  
@@ -41,6 +44,27 @@ Bunlar hakkında bilgiye üstteki linkten ulaşabilirsiniz. Kodlar şunlar;
 `cscript //nologo %SystemRoot%\system32\slmgr.vbs /atp (000000000000000000000000000000000000000000000000 şekline Onay Kimliği kodu)`
 
 `cscript //nologo %SystemRoot%\system32\slmgr.vbs /ato`
+
+# Bilinmesi Gereken Kodlar
+
+`cscript //nologo %SystemRoot%\system32\slmgr.vbs /dlv` kodu ile lisans durumunuzu kontrol edebilirsiniz. 
+
+![image](https://user-images.githubusercontent.com/10184695/184612438-e19371a5-12fa-4c29-b9b3-bced566dd76b.png)
+
+# KMS Lisans Anahtarı ve Sunucusu Silme
+
+Bu işlem için CMD Komut Satırını Yönetici olarak çalıştırmanız gerekiyor.
+
+![image](https://user-images.githubusercontent.com/10184695/184613901-709a7c8b-60d6-40aa-9c7e-23f3fb21bfea.png)
+
+
+`cscript //nologo %SystemRoot%\system32\slmgr.vbs /upk`
+
+`cscript //nologo %SystemRoot%\system32\slmgr.vbs /cpky` Ürün anahtarını kayıt defterinden siler.
+
+`cscript //nologo %SystemRoot%\system32\slmgr.vbs /ckms` KMS Host adını, adresini ve port bilgilerini kayıt defterinden siler. 
+
+Ardından `cscript //nologo %SystemRoot%\system32\slmgr.vbs /dlv` ile durumun kontrolünü gerçekleştirip lisans anahtarınızı ekleyebilirsiniz.
 
 
 # KULLANIM
