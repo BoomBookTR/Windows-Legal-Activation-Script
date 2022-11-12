@@ -147,7 +147,7 @@ Lisans kodunu kullanmadan önce durumunu kendiniz kontrol edebilirsiniz. Sorgula
 
 🚩PID Sorgulama Programları
 
-🔗http://khoatoantin.com/products/cidms.zip ( Username: trogiup24h Password: PHO veya Username: HQCNTH - Password: MIGOI )
+🔗http://khoatoantin.com/products/cidms.zip >Zip Şifresi: `CIDMSPro`< ( Username: trogiup24h Password: PHO veya Username: HQCNTH - Password: MIGOI )
 
 🔗https://github.com/laomms/PidKeyTool
 
