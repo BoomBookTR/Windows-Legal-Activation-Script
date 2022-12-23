@@ -197,7 +197,16 @@ set "username=trogiup24h"
 set "password=PHO"
 
 rem JSON verisini indirin ve dosyaya kaydedin
-curl -u "%username%:%password%" -o response.json "%url%"
+curl -u "%username%:%password%" -o %~dp0response.json "%url%
+if %ERRORLEVEL% == 3 goto :CIDGir
+if %ERRORLEVEL% == 6 goto :CIDGir
+::Hatalar
+::curl: (3) URL using bad/illegal format or missing URL
+::curl: (6) Could not resolve host: not
+::curl: (6) Could not resolve host: resolve
+::curl: (3) URL using bad/illegal format or missing URL
+
+
 
 rem CIDDurum deßiükeni Successfully ise CID deßiükenine ata
 for /f "tokens=5 delims=:," %%j in ('find "result" %~dp0response.json') do set "CIDDurum=%%j"
@@ -205,7 +214,7 @@ for /f "tokens=5 delims=:," %%j in ('find "result" %~dp0response.json') do set "
 set "CIDDurum=%CIDDurum:"=%"
 ::echo %CIDDurum%
 set "CID=null"
-echo %CID%
+::echo %CID%
 
 
 if "%CIDDurum%" == "Successfully" (
@@ -235,7 +244,7 @@ echo CID kodu: %CID% > CID_windows.txt
 ::CID anahtarçnç ekle
 ::set /p CIDkey=CID Gir:
 ::set "CIDkey=%CID%"
-
+:CIDGir
 if "%CID%" == "" (
   set /p CIDkey=CID Gir:
 ) else if /i "%CID%" == "null" (
