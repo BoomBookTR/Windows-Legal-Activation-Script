@@ -206,6 +206,8 @@ CID kodunu siteler aracılığıyla da almak mümkün. Aşağıda belirtilen sit
 
 🔗https://0xc004c008.com ( Username: trogiup24h Password: PHO )
 
+🔗https://getconfirmationid.com ( Username: trogiup24h Password: PHO )
+
 🔗https://khoatoantin.com/cidms ( Username: trogiup24h Password: PHO )
 
 🔗https://doonoi.top/GenCID.aspx
