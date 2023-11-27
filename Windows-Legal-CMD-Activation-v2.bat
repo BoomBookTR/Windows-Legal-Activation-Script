@@ -55,6 +55,14 @@ cd /d %~dp0
 
 
 @echo off
+setlocal EnableDelayedExpansion
+call :setESC
+
+:: color help <<<<<<<<<<<<<<<<<<bÅtÅn renk bilgileri iáin cmd ekrançna yaz
+:: color [arkaplanrengi][yazçrengi]
+::color 1F
+mode con lines=20 cols=150
+
 
 
 ::https://support.microsoft.com/tr-tr/windows/windows-i%C3%A7in-%C3%BCr%C3%BCn-etkinle%C5%9Ftirme-%C3%A7evrimi%C3%A7i-ve-destek-telefon-numaralar%C4%B1-35f6a805-1259-88b4-f5e9-b52cccef91a0
@@ -134,7 +142,9 @@ echo ===========================================================================
 ::Varolan etkinleütirme anahtarçnç sil
 echo YÅklenmiü Lisans Anahtarç Siliniyor...&
 cscript //nologo %SystemRoot%\system32\slmgr.vbs -upk
+::Kayçt defterinden lisans bilgilerini sil.
 :: cscript //nologo %SystemRoot%\system32\slmgr.vbs /cpky
+cscript //nologo %SystemRoot%\system32\slmgr.vbs /cpky
 echo ============================================================================&
 
 
@@ -189,7 +199,12 @@ cscript %SystemRoot%\system32\slmgr.vbs /dti > "%~dp0"\IID_windows.txt
 rem Komut áçktçsçnç IID deßiükenine ata
 for /f "tokens=3" %%i in ('cscript %SystemRoot%\system32\slmgr.vbs /dti ^| find ": "') do set "IID=%%i"
 
-echo %IID%
+
+echo.
+echo.
+echo.
+echo IID kodu: %IID%
+::echo IID kodu: %IID% > IID_windows.txt
 
 rem URL ve giriü bilgilerini tançmlayçn
 set "url=https://getconfirmationid.com/ajax/cidms_api?iids=%IID%&username=trogiup24h&password=PHO"
@@ -233,6 +248,10 @@ set "CID=%CID:"=%"
 ::set "CID=%CID:~1,-1%" 
 
 
+
+echo.
+echo.
+echo.
 rem "CID" deßiükeni ekrana yazdçrçlçr
 echo CID kodu: %CID%
 echo CID kodu: %CID% > CID_windows.txt
@@ -269,8 +288,7 @@ if /I "%b%" EQU "E" goto :secim
 if /I "%b%" EQU "H" goto :devametme
 goto :atlaoffline
 
-::Kayçt defterinden lisans bilgilerini sil.
-cscript //nologo %SystemRoot%\system32\slmgr.vbs /cpky
+
 
 :devametme
 Echo òülem Tamamlandç...
